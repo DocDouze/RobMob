@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: tf2_kdl
+Description: Description of tf2_kdl
+Version: 0.6.5
+Cflags: -I/home/aubailly/Bureau/RobMob/install/include -I/usr/include/eigen3 -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib /opt/ros/melodic/lib/liborocos-kdl.so.1.4.0
+Requires: 

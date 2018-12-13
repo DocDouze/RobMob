@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: tf2_bullet
+Description: Description of tf2_bullet
+Version: 0.6.5
+Cflags: -I/home/aubailly/Bureau/RobMob/install/include -I/usr/include/bullet
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib 
+Requires: 

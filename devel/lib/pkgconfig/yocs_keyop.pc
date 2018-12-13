@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/devel
+
+Name: yocs_keyop
+Description: Description of yocs_keyop
+Version: 0.12.1
+Cflags: 
+Libs: -L/home/aubailly/Bureau/RobMob/devel/lib 
+Requires: 

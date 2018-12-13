@@ -1,0 +1,74 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b943a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b943a.dir/build.make CMakeFiles/cmTC_b943a.dir/build
+make[1] : on entre dans le répertoire « /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_b943a.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b943a.dir/CheckSymbolExists.c.o   -c /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_b943a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b943a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b943a.dir/CheckSymbolExists.c.o  -o cmTC_b943a 
+CMakeFiles/cmTC_b943a.dir/CheckSymbolExists.c.o : Dans la fonction « main » :
+CheckSymbolExists.c:(.text+0x1b) : référence indéfinie vers « pthread_create »
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b943a.dir/build.make:97: recipe for target 'cmTC_b943a' failed
+make[1]: *** [cmTC_b943a] Error 1
+make[1] : on quitte le répertoire « /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp »
+Makefile:126: recipe for target 'cmTC_b943a/fast' failed
+make: *** [cmTC_b943a/fast] Error 2
+
+File /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_78df1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_78df1.dir/build.make CMakeFiles/cmTC_78df1.dir/build
+make[1] : on entre dans le répertoire « /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_78df1.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_78df1.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_78df1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78df1.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_78df1.dir/CheckFunctionExists.c.o  -o cmTC_78df1 -lpthreads 
+/usr/bin/ld : ne peut trouver -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_78df1.dir/build.make:97: recipe for target 'cmTC_78df1' failed
+make[1]: *** [cmTC_78df1] Error 1
+make[1] : on quitte le répertoire « /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp »
+Makefile:126: recipe for target 'cmTC_78df1/fast' failed
+make: *** [cmTC_78df1/fast] Error 2
+
+
+Determining if the include file pgm.h exists failed with the following output:
+Change Dir: /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_574ce/fast"
+/usr/bin/make -f CMakeFiles/cmTC_574ce.dir/build.make CMakeFiles/cmTC_574ce.dir/build
+make[1] : on entre dans le répertoire « /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_574ce.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_574ce.dir/CheckIncludeFile.cxx.o -c /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: pgm.h: Aucun fichier ou dossier de ce type
+ #include <pgm.h>
+          ^~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_574ce.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_574ce.dir/CheckIncludeFile.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_574ce.dir/CheckIncludeFile.cxx.o] Error 1
+make[1] : on quitte le répertoire « /home/aubailly/Bureau/RobMob/build/CMakeFiles/CMakeTmp »
+Makefile:126: recipe for target 'cmTC_574ce/fast' failed
+make: *** [cmTC_574ce/fast] Error 2
+
+

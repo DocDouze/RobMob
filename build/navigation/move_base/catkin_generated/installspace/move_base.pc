@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: move_base
+Description: Description of move_base
+Version: 1.16.2
+Cflags: -I/home/aubailly/Bureau/RobMob/install/include
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib 
+Requires: dynamic_reconfigure geometry_msgs move_base_msgs nav_msgs roscpp

@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: yocs_navigator
+Description: Description of yocs_navigator
+Version: 0.12.1
+Cflags: -I/home/aubailly/Bureau/RobMob/install/include -I/usr/include
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib -lyocs_basic_move_controller -lyocs_semantic_navigator /usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: roscpp actionlib tf yocs_math_toolkit move_base_msgs nav_msgs yocs_msgs

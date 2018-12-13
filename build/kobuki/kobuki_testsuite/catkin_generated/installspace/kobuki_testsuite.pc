@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: kobuki_testsuite
+Description: Description of kobuki_testsuite
+Version: 0.7.6
+Cflags: 
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/devel
+
+Name: yocs_controllers
+Description: Description of yocs_controllers
+Version: 0.12.1
+Cflags: -I/home/aubailly/Bureau/RobMob/src/yujin_ocs/yocs_controllers/include
+Libs: -L/home/aubailly/Bureau/RobMob/devel/lib 
+Requires: roscpp

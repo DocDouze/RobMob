@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: turtlebot_msgs
+Description: Description of turtlebot_msgs
+Version: 2.2.1
+Cflags: -I/home/aubailly/Bureau/RobMob/install/include
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib 
+Requires: std_msgs sensor_msgs std_srvs message_runtime

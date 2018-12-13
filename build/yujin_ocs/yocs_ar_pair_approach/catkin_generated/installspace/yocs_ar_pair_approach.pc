@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: yocs_ar_pair_approach
+Description: Description of yocs_ar_pair_approach
+Version: 0.12.1
+Cflags: 
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/devel
+
+Name: kobuki_bumper2pc
+Description: Description of kobuki_bumper2pc
+Version: 0.7.6
+Cflags: -I/home/aubailly/Bureau/RobMob/src/kobuki/kobuki_bumper2pc/include
+Libs: -L/home/aubailly/Bureau/RobMob/devel/lib -lkobuki_bumper2pc_nodelet
+Requires: roscpp nodelet pluginlib sensor_msgs kobuki_msgs

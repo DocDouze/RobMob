@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: yocs_joyop
+Description: Description of yocs_joyop
+Version: 0.12.1
+Cflags: 
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib 
+Requires: 

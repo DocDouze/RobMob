@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: local_planner_student
+Description: Description of local_planner_student
+Version: 0.0.0
+Cflags: -I/home/aubailly/Bureau/RobMob/install/include
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib -llocal_planner_student
+Requires: geometry_msgs nav_msgs roscpp rospy std_msgs tf

@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/devel
+
+Name: yocs_safety_controller
+Description: Description of yocs_safety_controller
+Version: 0.12.1
+Cflags: -I/home/aubailly/Bureau/RobMob/src/yujin_ocs/yocs_safety_controller/include
+Libs: -L/home/aubailly/Bureau/RobMob/devel/lib -lyocs_safety_controller_nodelet
+Requires: ecl_threads geometry_msgs nodelet pluginlib sensor_msgs std_msgs roscpp yocs_controllers

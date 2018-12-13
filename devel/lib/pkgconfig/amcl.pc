@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/devel
+
+Name: amcl
+Description: Description of amcl
+Version: 1.16.2
+Cflags: -I/home/aubailly/Bureau/RobMob/devel/include -I/home/aubailly/Bureau/RobMob/src/navigation/amcl/include
+Libs: -L/home/aubailly/Bureau/RobMob/devel/lib -lamcl_sensors -lamcl_map -lamcl_pf
+Requires: dynamic_reconfigure geometry_msgs nav_msgs rosbag roscpp sensor_msgs std_srvs tf2 tf2_msgs tf2_ros

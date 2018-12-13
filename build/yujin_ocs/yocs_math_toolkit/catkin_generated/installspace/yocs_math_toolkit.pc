@@ -1,0 +1,8 @@
+prefix=/home/aubailly/Bureau/RobMob/install
+
+Name: yocs_math_toolkit
+Description: Description of yocs_math_toolkit
+Version: 0.12.1
+Cflags: -I/home/aubailly/Bureau/RobMob/install/include
+Libs: -L/home/aubailly/Bureau/RobMob/install/lib -lyocs_math_toolkit
+Requires: ecl_build ecl_config ecl_exceptions ecl_formatters ecl_linear_algebra geometry_msgs roscpp tf
