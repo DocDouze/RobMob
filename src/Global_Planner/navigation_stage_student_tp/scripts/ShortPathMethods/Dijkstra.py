@@ -4,6 +4,8 @@ from AbstractShortPath import AbstractShortPath
 from visualization_msgs.msg import MarkerArray
 import math
 import rospy
+import numpy as np
+
 # import sys
 # sys.path.append('../')
 
@@ -14,66 +16,59 @@ class Dijsktra(AbstractShortPath):
         print ''
 
     def goto(self, source, target, matrix,pub_marker,marker_array):
-        # Dictionary that holds the previous node reference
+
         prev = {}
         # Dictionary that holds node score
         fscore = {}
         # List that holds the nodes to process
-        frontier = []
-        INF=9999
+        unvisit = []
+        INF = 9999
 
         # Condition to stop the path finding algo
-        isEnd=False
-        print 'start processing'
+        isEnd = False
+        print
+        'start processing'
 
         # Intialisation
-        for i in range (len(matrix)):
+        for i in range(len(matrix)):
             for j in range(len(matrix[0])):
-                # all nodes receive a score of INF
-                fscore[str(i)+'_'+str(j)]=INF
-                # all nodes are added to the list to process
-                frontier.append({'x':i,'y':j})
-        # score of the start node is set to 0
+
+                fscore[str(i) + '_' + str(j)] = INF
+                unvisit.append({'x': i, 'y': j})
+
         fscore[str(source['x']) + '_' + str(source['y'])] = 0
-        print 'end initialisation phase'
 
-        # while their is node to process or goal is reached (early exit)
-        while len(frontier) !=0 and not isEnd:
+        while len(unvisit) !=0 :
 
-            # get the node with the lowest score
-            u=self.minScore(fscore,frontier)
-            print 'current Node:'+str(u)
+            u = self.minScore(fscore, unvisit)
 
-            # remove the current node to the node to process list
-            frontier.remove(u)
+            unvisit.remove(u)
 
-            # create a visual information
             self.createClosedMarker(u, marker_array)
 
-            # get the list of the neighbors of the current node
             currentNeighbors=self.getNeighbors(u,matrix)
 
-            # for all neighbors
             for v in currentNeighbors:
-                # check that the current node has not already be processed
-                if self.inU(v,frontier):
-                    # create a visual information
+
+                if self.inU(v,unvisit):
+
                     self.createFontierUnitMarker(v, marker_array)
-                    # update the score of the current neighbor with the estimate distance between the neighbors and the target (heuristic)
-                    fscore[str(v['x']) + '_' + str(v['y'])] =self.hn(matrix,v,source)
-                    print '         Neighbor:' + str(v)+', hn:'+str(self.hn(matrix,v,source))
-                    # update precedence of the current neighbor
-                    prev[str(v['x']) + '_' + str(v['y'])]=str(u['x']) + '_' + str(u['y'])
-                    # check if the current neighbor is the target
+
+                    current_score = fscore[str(u['x']) + '_' + str(u['y'])] + self.hn(matrix,v,target)
+
+                    print current_score
+
+                    if current_score < fscore[str(v['x']) + '_' + str(v['y'])]:
+                        fscore[str(v['x']) + '_' + str(v['y'])] = current_score
+                        prev[str(v['x']) + '_' + str(v['y'])]=str(u['x']) + '_' + str(u['y'])
+
                     if str(v['x']) + '_' + str(v['y']) == str(target['x']) + '_' + str(target['y']):
-                        # end the path computation
-                        isEnd=True
-            # publish visual information
+                        return prev
+
             pub_marker.publish(marker_array)
             marker_array=MarkerArray()
-            # wait before next iteration
             rospy.sleep(0.2)
-        print str(prev)
+
         return prev
 
     def minScore(self, fscore,frontier):
@@ -81,7 +76,7 @@ class Dijsktra(AbstractShortPath):
         min=9999
         min_coord=''
         for n in frontier:
-            if(fscore[str(n['x'])+'_'+str(n['y'])] < min):
+            if fscore[str(n['x'])+'_'+str(n['y'])] < min :
                 min=fscore[str(n['x'])+'_'+str(n['y'])]
                 min_coord=n
         return min_coord
